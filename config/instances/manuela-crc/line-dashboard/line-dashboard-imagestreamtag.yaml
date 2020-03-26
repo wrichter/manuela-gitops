@@ -1,0 +1,23 @@
+
+apiVersion: image.openshift.io/v1
+kind: ImageStreamTag
+metadata:
+  name: line-dashboard:test
+  namespace: manuela-crc-line-dashboard
+  creationTimestamp: null
+tag:
+  name: ""
+  from: 
+    namespace: iotdemo
+    kind: ImageStreamTag
+    name: iot-frontend:latest
+    #kind: ImageStreamImage
+    #name: iot-frontend@sha256:...
+  importPolicy: 
+    insecure: false
+    scheduled: false
+  referencePolicy: 
+    #type: Source
+    type: Local
+  lookupPolicy: 
+    local: false
